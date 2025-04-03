@@ -1,7 +1,7 @@
 //! What is React ?
 // React is a Js Library, which is used for creating UI for different Application.
 
-import { Component } from "react";
+import { Children, Component, StrictMode, Suspense } from "react";
 
 //! Library VS Framework
 
@@ -92,3 +92,59 @@ import { Component } from "react";
 // Regular JavaScript Does not require compilation and can be run directly in the browser.
 }
 
+//! Components
+// Components are the reusable, independent peice of UI. 
+
+//& Built-in components 
+
+//& <Fragment/> or <> </> :
+
+//  It is used for holding multiple JSX element and render those element to the UI without Creating extra Node.
+
+//& <Profiler/> :
+
+//  Profiler is a react component that measures the performance and detects the slow parts in your app. It tells you how much time a component takes to render, helping you optimize performance. Wrap your components inside <Profiler> and provide a callback function to log performance data. 
+
+// function onRenderCallback(id, phase, actualDuration) {
+//    console.log(`Component: ${id}, Time taken: ${actualDuration}ms`);
+// }
+
+// return (
+//     <App>
+//         <Profiler id="Sidebar" onRender={onRenderCallback}>
+//         <Sidebar />
+//         </Profiler>
+
+//         <Profiler id="Content" onRender={onRenderCallback}>
+//             <Content>
+//                 <Profiler id="Editor" onRender={onRenderCallback}>
+//                     <Editor />
+//                 </Profiler>
+//                 <Preview />
+//             </Content>
+//         </Profiler>
+//   </App>
+// )
+
+//& <Suspense/> :
+
+// It display a fallback until its children have finished loading.
+
+{/* 
+function BigSpinner() {
+  return <h2>🌀 Loading...</h2>;
+}
+    
+<Suspense fallback={<BigSpinner />}>
+  <Albums />
+</Suspense>  
+*/}
+
+// In the example below, the Albums component suspends while fetching the list of albums. Until it’s ready to render, React switches the closest Suspense boundary above to show the fallback—your Loading component. Then, when the data loads, React hides the Loading fallback and renders the Albums component with data.
+
+// children: The actual UI you intend to render. If children suspends while rendering, the Suspense boundary will switch to rendering fallback.
+// fallback: An alternate UI to render in place of the actual UI if it has not finished loading. 
+
+//& <StrictMode/> : 
+
+// Use StrictMode to enable additional development behaviors and warnings for the component tree 

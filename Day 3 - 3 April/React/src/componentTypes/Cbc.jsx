@@ -1,8 +1,15 @@
-const Cbc = () => {
+import React, { Component } from 'react';
+
+class Cbc extends Component {
+
+  // Render method: returns the JSX to be rendered
+  render() {
     return (
-        <div>
-            This Component is Class Based Component
-        </div>
+      <div>
+        This is Class Based Component
+      </div>
     )
+  }
 }
-export default Cbc
+
+export default Cbc;
