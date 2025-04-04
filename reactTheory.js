@@ -148,3 +148,78 @@ function BigSpinner() {
 //& <StrictMode/> : 
 
 // Use StrictMode to enable additional development behaviors and warnings for the component tree 
+
+
+//!==================================Hooks==========================================
+
+// Hooks : Hooks are the in-built function in React.
+
+//! use State :
+// useState is a React Hook which stores the data in the component level. It return an array which contains undefined, and setter fn(). This setter function is used to change the value of the state dynamically. States are mutable and can be changed within the component.
+
+//! {} 
+// It is known as expression which is used to use the js code inside the jsx.
+
+//! Props :
+// Props are the short form of properties, which are used to Pass Data from Parent Component to the Child Component. Props are immutable means it cannot be changed during runTime.
+
+//! Props Drilling :
+// When we wants to pass data from Parent Component to the nested Child Component, it is known as Props Drilling.
+
+//! data?.map(() => {})
+// Optional Chaining (?.):
+// The ?. is like a safety check. It makes sure that allUser exists before trying to use the map function. If allUser is null or undefined, it won't try to call map, preventing errors.
+
+
+//!==================================Class Based Components==========================================
+
+
+//! render () :
+// Render is the only methods that requires in the Class Based Components.
+// Render method should specify what you wants to appear on the UI.
+// When Strict Mode is on, React will call render twice in development and then throw away one of the results. This helps you notice the accidental side effects that need to be moved out of the render method.
+//! Class Based Components:
+// Have JavaScript Class
+// StateFull
+// this keyword
+// render method
+// life cycle method
+// No Hooks
+
+//! LifeCycle Methods:
+//& ComponentDidMount : 
+// The code present inside ComponentDidMount runs, when the Component is loaded on the UI.
+//& ComponentDidUpdate :
+// The Code present inside componentDidUpdate runs, when any changes occurs on the UI.
+//& ComponentWillUnmount :
+// The Code present inside ComponentWill Unmount runs, when any component is removed from the UI.
+
+
+
+//!============================== Hooks =====================================
+
+// Hooks are the in-built function in React, which starts with use Keywords.
+
+// Rules of Using Hooks :
+
+// 1. Do not call Hooks inside conditions or loops.
+        for (let i = 0; i < 10; i++) {
+        }
+// 2. Do not call Hooks after a conditional return statement. 
+        if (condition) {
+        }
+// 3. Do not call Hooks in event handlers.
+        function handleClick() {
+        }
+// 4. Do not call Hooks in class components.
+        class Bad extends React.Component {
+          render() {
+          }
+        }
+// 5. Do not call Hooks inside functions passed to useMemo, useReducer, or useEffect.
+        const style = useMemo(() => {
+          const theme = useContext(ThemeContext);
+          return (
+            createStyle(theme)
+          );
+        });
